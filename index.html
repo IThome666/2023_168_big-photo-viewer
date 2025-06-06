@@ -1,25 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>高清合影查看器</title>
-    <script src="https://openseadragon.github.io/openseadragon/openseadragon.min.js"></script>
-    <style>
-        html, body, #openseadragon {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-    </style>
+  <meta charset="utf-8">
+  <title>高清合影查看器</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <script src="https://cdn.bootcdn.net/ajax/libs/openseadragon/4.1.0/openseadragon.min.js"></script>
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    #openseadragon {
+      width: 100vw;
+      height: 100vh;
+      touch-action: none; /* 🚀 让滑动手势立即响应 */
+    }
+
+    /* 🚀 放大控制按钮以适配手指操作 */
+    .openseadragon-container .zoom-in,
+    .openseadragon-container .zoom-out,
+    .openseadragon-container .home {
+      width: 48px !important;
+      height: 48px !important;
+    }
+
+    .openseadragon-container .controls {
+      transform: scale(1.5); /* 控制整体放大比例 */
+      transform-origin: top right;
+    }
+  </style>
 </head>
 <body>
-    <div id="openseadragon"></div>
-    <script>
-        OpenSeadragon({
-            id: "openseadragon",
-            prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-            tileSources: "GroupPhoto.dzi"
-        });
-    </script>
+  <div id="openseadragon"></div>
+
+  <script>
+    OpenSeadragon({
+      id: "openseadragon",
+      prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+      tileSources: "Groupphoto.dzi",
+
+      // ✅ 手势优化：适合手机端操作
+      gestureSettingsTouch: {
+        pinchToZoom: true,
+        clickToZoom: false,
+        flickEnabled: false,
+        dragToPan: true
+      },
+
+      // ✅ 动画和性能优化
+      immediateRender: false,
+      blendTime: 0,
+      imageLoaderLimit: 2,    // 限制加载并发
+      maxZoomPixelRatio: 2.5, // 限制最大缩放
+      visibilityRatio: 1.0,
+      constrainDuringPan: true,
+
+      // ✅ 取消缩略图，节省资源
+      showNavigator: false
+    });
+  </script>
 </body>
 </html>
+
