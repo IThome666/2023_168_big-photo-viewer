@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>高清合影查看器</title>
+  <title>合肥一六八中学2023届毕业大合影</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <script src="https://cdn.bootcdn.net/ajax/libs/openseadragon/4.1.0/openseadragon.min.js"></script>
@@ -18,11 +18,11 @@
     #openseadragon {
       width: 100vw;
       height: 100vh;
-      touch-action: none; /* 🚀 让滑动手势立即响应 */
+      touch-action: none;
     }
 
     .openseadragon-container .controls {
-      transform: scale(1.5); /* 控制整体放大比例 */
+      transform: scale(1.5); 
       transform-origin: top right;
     }
   </style>
@@ -36,7 +36,7 @@
       showNavigationControl: false
       tileSources: "GroupPhoto.dzi",
 
-      // ✅ 手势优化：适合手机端操作
+      // 手势优化
       gestureSettingsTouch: {
         pinchToZoom: true,
         clickToZoom: false,
@@ -44,7 +44,7 @@
         dragToPan: true
       },
 
-      // ✅ 动画和性能优化
+      //  动画和性能优化
       immediateRender: false,
       blendTime: 0,
       imageLoaderLimit: 2,    // 限制加载并发
@@ -52,7 +52,7 @@
       visibilityRatio: 1.0,
       constrainDuringPan: true,
 
-      // ✅ 取消缩略图，节省资源
+      // 取消缩略图
       showNavigator: false
     });
   </script>
