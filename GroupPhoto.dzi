@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Image xmlns="http://schemas.microsoft.com/deepzoom/2008"
+  Url="https://2023-168.oss-cn-shanghai.aliyuncs.com/Groupphoto_files/",
   Format="jpeg"
   Overlap="1"
   TileSize="254"
