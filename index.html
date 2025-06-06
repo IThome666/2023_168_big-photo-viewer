@@ -21,14 +21,6 @@
       touch-action: none; /* 🚀 让滑动手势立即响应 */
     }
 
-    /* 🚀 放大控制按钮以适配手指操作 */
-    .openseadragon-container .zoom-in,
-    .openseadragon-container .zoom-out,
-    .openseadragon-container .home {
-      width: 48px !important;
-      height: 48px !important;
-    }
-
     .openseadragon-container .controls {
       transform: scale(1.5); /* 控制整体放大比例 */
       transform-origin: top right;
@@ -41,7 +33,7 @@
   <script>
     OpenSeadragon({
       id: "openseadragon",
-      
+      showNavigationControl: false
       tileSources: "GroupPhoto.dzi",
 
       // ✅ 手势优化：适合手机端操作
